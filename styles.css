@@ -12,7 +12,7 @@
 body {
   margin: 0;
   color: var(--text-main);
-  font-family: "Work Sans";
+  font-family: "Inter";
   background-color: var(--background);
 }
 
@@ -28,6 +28,7 @@ nav a {
   text-decoration: none;
   margin-left: 25px;
   font-weight: bold;
+  font-size: 20px;
   transition: color 0.7s ease, transform 0.8s ease;
 }
 
@@ -66,6 +67,7 @@ nav a:hover {
 }
 
 .home-content h1 {
+  font-family: "Noto Serif";
   margin-top: 30px;
   font-size: 80px;
   margin-bottom: 0;
@@ -107,6 +109,7 @@ nav a:hover {
   animation: bounce 2s infinite;
 }
 
+/* down arrow bounce */
 @keyframes bounce {
   0%,
   100% {
@@ -115,4 +118,100 @@ nav a:hover {
   50% {
     transform: translateY(8px);
   }
+}
+
+#about {
+  margin-top: 0;
+  padding: 0px 0px;
+  padding-bottom: 80px;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+}
+
+/* Main box container */
+.about-box {
+  border-radius: 30px;
+  padding: 60px 40px;
+  max-width: 1500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+  background: linear-gradient(
+    270deg,
+    var(--background),
+    var(--highlight),
+    var(--section-bg)
+  );
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.about-box h2 {
+  font-family: "Noto Serif";
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.about-box p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* Formatting the elements into columns */
+.values {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.values li {
+  background-color: var(--background);
+  font-family: "Noto Serif";
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--highlight);
+  font-weight: 600;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.values li i {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.values li:hover {
+  background-color: var(--border);
+  transform: translateY(-3px);
+  cursor: pointer;
 }
