@@ -1,0 +1,118 @@
+:root {
+  --primary: #d3766a;
+  --secondary: #a39391;
+  --background: #2f2c2b;
+  --section-bg: #3b3836;
+  --text-main: #efe9e4;
+  --text-muted: #b7ada7;
+  --border: #4a4644;
+  --highlight: #78866b;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  font-family: "Work Sans";
+  background-color: var(--background);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  transition: color 0.7s ease, transform 0.8s ease;
+}
+
+nav a:hover {
+  color: var(--highlight);
+  transform: translateY(-2px);
+}
+
+#home {
+  height: 100vh;
+  background-image: url("assets/home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-content {
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 2s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-content h1 {
+  margin-top: 30px;
+  font-size: 80px;
+  margin-bottom: 0;
+}
+
+.home-content p {
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.profile {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--highlight);
+}
+
+.home-content button {
+  background-color: var(--primary);
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 13px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.7s ease;
+  color: var(--text-main);
+}
+
+.home-content button:hover {
+  background-color: var(--text-muted);
+}
+
+.arrow {
+  font-size: 25px;
+  color: var(--highlight);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
