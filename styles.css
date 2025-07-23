@@ -88,10 +88,9 @@ nav a:hover {
 
 .home-content button {
   background-color: var(--primary);
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 15px;
   padding: 13px;
-  border-radius: 20px;
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
@@ -109,7 +108,6 @@ nav a:hover {
   animation: bounce 2s infinite;
 }
 
-/* down arrow bounce */
 @keyframes bounce {
   0%,
   100% {
@@ -122,8 +120,7 @@ nav a:hover {
 
 #about {
   margin-top: 0;
-  padding: 0px 0px;
-  padding-bottom: 80px;
+  padding: 0 0 80px 0;
   background-color: var(--background);
   display: flex;
   justify-content: center;
@@ -131,7 +128,6 @@ nav a:hover {
   color: var(--text-main);
 }
 
-/* Main box container */
 .about-box {
   border-radius: 30px;
   padding: 60px 40px;
@@ -176,7 +172,6 @@ nav a:hover {
   margin: 0 auto 40px;
 }
 
-/* Formatting the elements into columns */
 .values {
   list-style: none;
   padding: 0;
@@ -222,9 +217,16 @@ nav a:hover {
   gap: 150px;
   justify-content: center;
   max-width: 900px;
-  margin: 0 auto;
-  margin-top: 300px;
+  margin: 0 auto 100px;
+}
+
+.skills-heading {
+  font-size: 42px;
+  font-family: "Noto Serif";
+  text-align: center;
+  color: var(--text-main);
   margin-bottom: 100px;
+  margin-top: 170px;
 }
 
 #skills {
@@ -248,6 +250,7 @@ nav a:hover {
   opacity: 0.95;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 25px 5px var(--primary);
 }
+
 .card h2 {
   font-size: 20px;
   font-family: "Noto Serif";
@@ -256,7 +259,7 @@ nav a:hover {
 }
 
 .skill {
-  margin-bottom: 1px;
+  margin-bottom: 20px;
 }
 
 .skill-title {
@@ -283,41 +286,50 @@ nav a:hover {
 .icon-figma {
   color: #d3b3ff;
 }
+
 .icon-canva {
   color: #a0e9eb;
 }
+
 .icon-html {
   color: #f4b7a1;
 }
+
 .icon-css {
   color: #a7c7ff;
 }
+
 .icon-js {
   color: #fdf3a0;
 }
+
 .icon-collab {
   color: #b2e4c1;
 }
+
 .icon-time {
   color: #ffd8a9;
 }
+
 .icon-presentation {
   color: #c7cfff;
 }
+
 .icon-vscode {
   color: #b3e5fc;
 }
+
 .icon-github {
   color: #d3d3d3;
 }
 
 .bar-fill {
-  background-color: var(--highlight);
+  background: linear-gradient(90deg, var(--primary), var(--highlight));
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, var(--primary), var(--highlight));
   transition: width 1s ease;
 }
+
 .skill:hover .skill-title {
   color: var(--primary);
   transition: color 0.3s ease;
@@ -328,12 +340,13 @@ nav a:hover {
   background-color: var(--background);
   color: var(--text-main);
   text-align: center;
+  margin-left: 50px;
 }
 
 #education h1 {
   font-size: 42px;
   font-family: "Noto Serif";
-  color: var(--text-muted);
+  color: var(--primary);
   margin-bottom: 60px;
 }
 
@@ -346,8 +359,14 @@ nav a:hover {
 }
 
 .timeline-item {
-  position: relative;
-  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .timeline-dot {
@@ -384,4 +403,91 @@ nav a:hover {
 .timeline-content p {
   font-size: 16px;
   color: var(--text-main);
+}
+
+.certificate-btn {
+  background: var(--highlight);
+  color: white;
+  margin-left: 700px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 1s ease;
+  font-size: 14px;
+}
+
+.certificate-btn:hover {
+  background: var(--text-main);
+  color: var(--highlight);
+}
+
+.cursor-circle {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: var(--highlight);
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 0;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+
+#contact {
+  padding: 80px 20px;
+  background-color: var(--background);
+  color: var(--text-main);
+  text-align: center;
+}
+
+#contact h1 {
+  font-size: 42px;
+  color: var(--text-main);
+  margin-bottom: 40px;
+  font-family: "Noto Serif";
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid var(--highlight);
+  border-radius: 8px;
+  background-color: var(--section-bg);
+  color: var(--text-main);
+  resize: none;
+  font-family: "Inter";
+}
+
+.contact-form textarea {
+  height: 140px;
+}
+
+.contact-form button {
+  background: var(--highlight);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: var(--text-muted);
 }
