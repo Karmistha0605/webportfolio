@@ -86,7 +86,7 @@ nav a:hover {
   border: 1px solid var(--highlight);
 }
 
-.home-content button {
+.download-btn {
   background-color: var(--primary);
   border-radius: 20px;
   font-size: 15px;
@@ -96,9 +96,10 @@ nav a:hover {
   margin-bottom: 20px;
   transition: background-color 0.7s ease;
   color: var(--text-main);
+  text-decoration: none;
 }
 
-.home-content button:hover {
+.download-btn:hover {
   background-color: var(--text-muted);
 }
 
@@ -106,6 +107,7 @@ nav a:hover {
   font-size: 25px;
   color: var(--highlight);
   animation: bounce 2s infinite;
+  margin-top: 20px;
 }
 
 @keyframes bounce {
@@ -330,11 +332,6 @@ nav a:hover {
   transition: width 1s ease;
 }
 
-.skill:hover .skill-title {
-  color: var(--primary);
-  transition: color 0.3s ease;
-}
-
 #education {
   padding: 80px 20px;
   background-color: var(--background);
@@ -430,7 +427,7 @@ nav a:hover {
   background: var(--highlight);
   border-radius: 50%;
   filter: blur(70px);
-  opacity: 0.4;
+  opacity: 1;
   pointer-events: none;
   mix-blend-mode: screen;
   z-index: 0;
@@ -438,15 +435,180 @@ nav a:hover {
   margin-top: -50px;
 }
 
-#contact {
+/* Project*/
+#projects {
   padding: 80px 20px;
-  background-color: var(--background);
+  background: var(--background);
+}
+
+.projects-heading {
+  text-align: center;
+  font-size: 42px;
+  color: var(--primary);
+  font-family: "Noto Serif", serif;
+  margin-bottom: 60px;
+}
+
+.project-wrapper {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.flip-card {
+  width: 320px;
+  height: 320px;
+  perspective: 1000px;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flip-front {
+  background: var(--section-bg);
+}
+
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.flip-back {
+  background: linear-gradient(135deg, var(--highlight), var(--secondary));
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px;
+  flex-direction: column;
+  text-align: left;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+.git-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: var(--highlight);
+
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.git-btn a {
+  text-decoration: none;
+  color: var(--text-main);
+}
+.git-btn:hover {
+  background-color: var(--secondary);
+  color: var(--background);
+}
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-info h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: var(--text-main);
+  font-family: "Noto Serif", serif;
+}
+
+.project-description,
+.project-info ul,
+.project-info .tech-icons {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.flip-card:hover ~ .project-info .project-description,
+.flip-card:hover ~ .project-info ul,
+.flip-card:hover ~ .project-info .tech-icons {
+  opacity: 1;
+  max-height: 1000px;
+  overflow: visible;
+}
+
+.project-info ul {
+  font-size: 18px;
+  color: var(--text-muted);
+  padding-left: 20px;
+  margin: 0 0 10px 0;
+}
+
+.project-info li {
+  padding-bottom: 10px;
+}
+
+.project-info ul li::marker {
+  content: "➮";
+}
+
+.project-info .tech-icons {
+  font-size: 28px;
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+  color: var(--highlight);
+}
+
+.project-info .tech-icons a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+/* Contact Us */
+#contact {
+  height: 70vh;
+  background-image: url("assets/home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--text-main);
   text-align: center;
+  padding: 80px 20px;
 }
 
 #contact h1 {
-  font-size: 42px;
+  font-size: 80px;
   color: var(--text-main);
   margin-bottom: 40px;
   font-family: "Noto Serif";
