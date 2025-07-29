@@ -16,6 +16,8 @@ body {
   background-color: var(--background);
 }
 
+/* Navbar */
+
 nav {
   display: flex;
   justify-content: center;
@@ -36,6 +38,8 @@ nav a:hover {
   color: var(--highlight);
   transform: translateY(-2px);
 }
+
+/* Home Section */
 
 #home {
   height: 100vh;
@@ -119,6 +123,8 @@ nav a:hover {
     transform: translateY(8px);
   }
 }
+
+/* About Section */
 
 #about {
   margin-top: 0;
@@ -212,6 +218,8 @@ nav a:hover {
   transform: translateY(-3px);
   cursor: pointer;
 }
+
+/* Skills Section */
 
 .skills-content {
   display: grid;
@@ -332,6 +340,8 @@ nav a:hover {
   transition: width 1s ease;
 }
 
+/* Education Section */
+
 #education {
   padding: 80px 20px;
   background-color: var(--background);
@@ -435,7 +445,8 @@ nav a:hover {
   margin-top: -50px;
 }
 
-/* Project*/
+/* Project Section*/
+
 #projects {
   padding: 80px 20px;
   background: var(--background);
@@ -595,7 +606,8 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* Contact Us */
+/* Contact Us Section */
+
 #contact {
   height: 70vh;
   background-image: url("assets/home.png");
@@ -652,4 +664,126 @@ nav a:hover {
 
 .contact-form button:hover {
   background: var(--text-muted);
+}
+
+/* Tablet View (max-width: 768px) */
+
+@media (max-width: 1024px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .card {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificate-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile View (max-width: 768px) */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 18px;
+    margin: 8px 0;
+  }
+
+  .home-content h1 {
+    font-size: 40px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .profile {
+    width: 160px;
+    height: 160px;
+  }
+
+  .skills-heading,
+  #education h1,
+  .projects-heading,
+  #contact h1 {
+    font-size: 28px;
+    margin-top: 60px;
+  }
+
+  .values {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .flip-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .flip-front img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .project-info h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .project-info ul {
+    font-size: 16px;
+  }
+
+  .contact-form {
+    padding: 0 20px;
+  }
+
+  .cursor-circle {
+    display: none;
+  }
+
+  .timeline-content {
+    padding-left: 10px;
+  }
+
+  .certificate-btn {
+    margin: 10px 0;
+  }
 }
